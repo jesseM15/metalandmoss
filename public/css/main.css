@@ -8,6 +8,14 @@ body {
     /*font-family: 'Fredericka the Great', cursive;*/
 }
 
+/* Begin Bootstrap modifications */
+
+.navbar-nav > li {
+  margin: 0 3rem;
+}
+
+/* End Bootstrap modifications */
+
 
 
 /* Begin nav_menu css */
@@ -126,4 +134,10 @@ body {
   /* Can have values 1-4, 3 = -90deg above */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
 
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  padding: 3rem;
 }
