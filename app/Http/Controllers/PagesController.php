@@ -98,7 +98,24 @@ class PagesController extends Controller
 
 	public function home()
 	{
+		\Cart::session(1);
+		\Cart::clear();
+		\Cart::session(1)->clear();
+		\Cart::add(1, 'Sample Item', 49.95, 2, []);
+		$data['summedPrice'] = \Cart::get(1)->getPriceSum();
 		$data['nav_pages'] = $this->getNav();
 		return view('home', $data);
+	}
+
+	public function cart()
+	{
+		// NOTE: Cart adds lines in config/app.php under Autoloaded Service Providers and Class Aliases
+		\Cart::session(1);
+		\Cart::clear();
+		\Cart::session(1)->clear();
+		\Cart::add(1, 'Sample Item', 49.95, 2, []);
+		$data['summedPrice'] = \Cart::get(1)->getPriceSum();
+		$data['nav_pages'] = $this->getNav();
+		return view('cart', $data);
 	}
 }

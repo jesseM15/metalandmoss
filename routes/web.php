@@ -13,4 +13,6 @@
 
 Route::get('/', 'PagesController@home');
 
+Route::get('/cart', 'PagesController@cart');
+
 Route::get('{path?}', 'PagesController@index')->where('path', '.*');

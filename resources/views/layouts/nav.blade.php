@@ -69,6 +69,13 @@
 
                     @endforeach
 
+                        <li class="nav-item">
+
+                            <a class="nav-link" href="{{ URL::to('cart') }}"><i class="fas fa-shopping-cart"></i></a>
+                            <!-- <a class="nav-link" href="#"><i class="fas fa-cart-plus"></i></a> -->
+
+                        </li>
+
                     </ul>
 
                 </div>
