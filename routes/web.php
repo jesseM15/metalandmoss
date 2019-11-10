@@ -15,4 +15,6 @@ Route::get('/', 'PagesController@home');
 
 Route::get('/cart', 'PagesController@cart');
 
+Route::get('/calendar', 'PagesController@calendar');
+
 Route::get('{path?}', 'PagesController@index')->where('path', '.*');

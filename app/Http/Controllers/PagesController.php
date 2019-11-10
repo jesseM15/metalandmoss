@@ -118,4 +118,10 @@ class PagesController extends Controller
 		$data['nav_pages'] = $this->getNav();
 		return view('cart', $data);
 	}
+
+	public function calendar()
+	{
+		$data['nav_pages'] = $this->getNav();
+		return view('calendar', $data);
+	}
 }

@@ -9,9 +9,9 @@
                 <p>Remember the cozy feeling of home</p>
                 <button class="btn btn-lg btn-outline-light">Shop Now</button>
             </div>
-            <img class="product1" src="img/table_03.jpg">
-            <img class="product2" src="img/bench.jpg">
-            <img class="product3" src="img/pillows.jpg">
+            <img class="product1" src="img/eggs.jpg">
+            <img class="product2" src="img/chair.jpg">
+            <img class="product3" src="img/basket.jpg">
         </div>
 
         <div class="container">
