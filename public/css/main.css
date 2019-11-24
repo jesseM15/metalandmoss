@@ -20,6 +20,11 @@ body {
 
 /* Begin nav_menu css */
 
+#metalandmosslogo {
+  width: 145px;
+  height: 30px;
+}
+
 .dropdown-submenu {
     position: relative;
 }
@@ -61,9 +66,13 @@ body {
   text-align: center;
   position: relative;
   top: 50%;
-  right: -75%;
+  left: 30%;
   transform: translate(-75%, -50%);
   color: white;
+  width: 20rem;
+}
+
+.hero-text h1 svg {
   width: 20rem;
 }
 
@@ -71,8 +80,8 @@ body {
     width: 600px;
     border: 0.75rem solid #fff;
     position: relative;
-    top: 1.6rem;
-    left: 12rem;
+    top: -0.6rem;
+    right: -45%;
     z-index: 3;
     shape-outside: margin-box;
 }
@@ -81,8 +90,8 @@ body {
     width: 400px;
     border: 0.75rem solid #fff;
     position: relative;
-    top: -5rem;
-    left: 10rem;
+    top: -7rem;
+    right: -40%;
     z-index: 2;
     shape-outside: margin-box;
 }
@@ -91,8 +100,8 @@ body {
     width: 400px;
     border: 0.75rem solid #fff;
     position: relative;
-    top: -9rem;
-    left: 8rem;
+    top: -11.5rem;
+    right: -35%;
     z-index: 1;
     shape-outside: margin-box;
 }
