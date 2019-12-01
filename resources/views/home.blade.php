@@ -20,18 +20,28 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15 0C6.71573 0 0 6.71573 0 15V70C0 78.2843 6.71573 85 15 85H70C78.2843 85 85 78.2843 85 70V15C85 6.71573 78.2843 0 70 0H15ZM46.1795 23.1646L44.8056 23.3822L41.6505 28.3009L38.3759 23.3305L37.0952 23.1277L32.7112 41.4657L15.8423 27.9887L14.5615 28.1915L17.2188 61.5476L21.3871 60.8874L19.3553 36.0018L31.6136 46.0567L29.3148 55.6723L33.4831 56.3325L36.5588 43.3543L41.5486 35.6402L46.974 44.1106L49.9784 56.1721L54.1932 55.5046L51.6164 45.7495L64.0042 35.7443L62.1953 60.88L66.4102 61.5476L67.6224 44.8512L68.8346 28.1547L67.4607 27.9371L50.4971 41.512L47.9252 31.7754H47.9047L46.1795 23.1646ZM39.2408 32.037L39.2474 32.0473L39.2331 32.0695L39.2408 32.037Z" fill="#fff"/>
                     </svg>
                 </h1>
-                <p>Remember the cozy feeling of home</p>
-                <button class="btn btn-lg btn-outline-light">Shop Now</button>
+                <p>Home Sweet Home</p>
             </div>
-            <img class="product1" src="img/eggs.jpg">
-            <img class="product2" src="img/chair.jpg">
-            <img class="product3" src="img/basket.jpg">
+        </div>
+
+        <div class="container-fluid products">
+            <img class="item" src="img/apple.jpg">
+            <img class="item" src="img/vase.jpg">
+            <img class="item" src="img/eggs.jpg">
+            <img class="item" src="img/chair.jpg">
+            <img class="item" src="img/basket.jpg">
+            <img class="item" src="img/blue-dresser.jpg">
+            <img class="item" src="img/mirror-dresser.jpg">
+            <img class="item" src="img/pedestals.jpg">
+            <img class="item" src="img/pumpkin.jpg">
         </div>
 
         <div class="container">
 
-            <div class="side-callout rotate">
-                Artisanal Goods
+            <div class="col-sm-9">
+                <div class="side-callout rotate">
+                    Artisanal Goods
+                </div>
             </div>
 
             <div class="intro-text">
