@@ -125,11 +125,11 @@ $( document ).ready(function() {
         {
             id: scheduleCounter++,
             calendarId: '1',
-            title: 'first schedule',
+            title: 'Open 2 - 4 pm',
             category: 'time',
             dueDateClass: '',
-            start: '2019-11-08T22:30:00+09:00',
-            end: '2019-11-09T02:30:00+09:00',
+            start: '2019-12-08T22:30:00+09:00',
+            end: '2019-12-09T02:30:00+09:00',
             // isReadOnly: true    // schedule is read-only
         },
         {

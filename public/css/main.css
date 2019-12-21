@@ -1,3 +1,12 @@
+/* Possible color schemes 
+
+https://coolors.co/454851-73956f-7bae7f-95d7ae-fceff9
+https://coolors.co/454851-4ecdc4-f7fff7-ff6b6b-fceff9
+https://coolors.co/454851-69fff1-63d471-63a46c-fceff9
+
+*/
+
+
 html,
 body {
     height: 100%;
@@ -14,6 +23,46 @@ body {
   margin: 0 3rem;
 }
 
+
+
+.navbar-custom {
+  color: #ffffff;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #ffffff;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+  color: #ffffff;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link,
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #ffffff;
+}
+
+
+
+.navbar-light .navbar-brand {
+  color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #FFFFFF;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #ddd !important;
+}
+
 /* End Bootstrap modifications */
 
 
@@ -21,8 +70,11 @@ body {
 /* Begin nav_menu css */
 
 #metalandmosslogo {
-  width: 145px;
-  height: 30px;
+  /* width: 145px; */
+  /* height: 30px; */
+  width: 25px;
+  height: 25px;
+  margin: 0 0 6px 0;
 }
 
 .dropdown-submenu {
@@ -65,15 +117,16 @@ body {
 .hero-text {
   text-align: center;
   position: relative;
-  top: 50%;
-  left: 30%;
-  transform: translate(-75%, -50%);
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -35%);
   color: white;
   width: 20rem;
+  font-size: 1.2rem;
 }
 
-.hero-text h1 svg {
-  width: 20rem;
+.hero-text svg {
+  width: 60px;
 }
 
 .product1 {
@@ -108,17 +161,23 @@ body {
 
 
 
-.intro-text {
+.intro-text,
+.news,
+.map {
     position: relative;
     top: -5.6rem;
+}
+
+h1 {
+  font-size: 1.75rem;
 }
 
 .side-callout {
     float: right;
     font-size: 6rem;
     position: relative;
-    top: 24rem;
-    right: -50rem;
+    top: 25rem;
+    right: -47rem;
     width: 100%;
 }
 
@@ -164,15 +223,45 @@ body {
   max-height: 25vh;
   display: inline-block;
   text-align: center;
-  /* padding: 0 0.25rem; */
+  padding: 0 0.25rem;
 }
 
 /* End Products Section */
 
+#about {
+  /* background: #63a46c; */
+  /* background: linear-gradient(0deg, #63a46cff 0%, #63a46cff 15%, #63d471ff 100%); */
+  background: #74b3ce;
+  background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%);
+  color: #FCEFF9;
+  padding: 3rem;
+}
+
+.container-wave svg {
+  /* background: #74b3ce; */
+  background: #63d471;
+  width: 100%;
+}
+
+.container-wave.inverse svg {
+  transform: rotate(180deg);
+  background: #fff;
+}
+
+#contact {
+  /* background: #74b3ce; */
+  /* background: linear-gradient(0deg, #30c5ffff 0%, #30c5ffff 15%, #74b3ceff 100%); */
+  background: #63a46c;
+  background: linear-gradient(0deg, #63a46cff 0%, #63a46cff 15%, #63d471ff 100%);
+  color: #FCEFF9;
+  padding: 3rem;
+}
+
+
 
 
 footer {
-  background: #333;
-  color: #fff;
+  background: #454851;
+  color: #FCEFF9;
   padding: 3rem;
 }
