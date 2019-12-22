@@ -17,4 +17,8 @@ Route::get('/cart', 'PagesController@cart');
 
 Route::get('/calendar', 'PagesController@calendar');
 
+Route::get('/schedules', 'PagesController@getSchedules');
+Route::post('/save-schedule', 'PagesController@saveSchedule');
+Route::post('/delete-schedule', 'PagesController@deleteSchedule');
+
 Route::get('{path?}', 'PagesController@index')->where('path', '.*');

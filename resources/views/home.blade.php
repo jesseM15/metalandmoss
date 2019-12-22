@@ -3,6 +3,7 @@
 @section('title', 'Metal & Moss')
 
 @section('content')
+<div id="existing_schedules" data-schedules="{{ $schedules }}"></div>
     	<div class="hero-image">
             @include('layouts.nav')
         	<div class="hero-text">

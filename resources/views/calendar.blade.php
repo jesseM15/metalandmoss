@@ -3,6 +3,7 @@
 @section('title', 'Metal & Moss')
 
 @section('content')
+		<div id="existing_schedules" data-schedules="{{ $schedules }}"></div>
     	<div class="container">
     		<h1>Calendar</h1>
     		<div id="menu">

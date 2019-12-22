@@ -5,12 +5,27 @@ $( document ).ready(function() {
     // - Finish UI stuff
     //     - Arrows to navigate months, etc.
 
-    // - Implement saving/loading schedules to/from DB
     // - Implement basic auth or some other method for admin access
 
     // See https://nhn.github.io/tui.calendar/latest/Schedule
 
-    var scheduleCounter = 1;     // Temporary global for creating unique ids for schedules
+    const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
+
+    const saveScheduleUrl = '//metalandmoss.box/save-schedule';
+    const deleteScheduleUrl = '//metalandmoss.box/delete-schedule';
+
+    const fetchParams = {
+      headers: {
+        "content-type":"application/json; charset=UTF-8",
+        "Accept": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-Token": csrfToken
+      },
+      method: "POST",
+      credentials: "same-origin"
+    };
+
+
 
     var MONTHLY_CUSTOM_THEME = {
         // month header 'dayname'
@@ -49,9 +64,13 @@ $( document ).ready(function() {
         'month.moreViewList.padding': '10px'
     };
 
+    // For moment.js formatting rules see: https://momentjscom.readthedocs.io/en/latest/moment/04-displaying/01-format/
 
     // register templates
     const templates = {
+      time: function(schedule) {
+          return '<strong>' + moment(schedule.start.getTime()).format('h:mm') + '-' + moment(schedule.end.getTime()).format('h:mm') + '</strong>&nbsp;' + schedule.title;
+        },
         popupIsAllDay: function() {
           return 'All Day';
         },
@@ -81,13 +100,13 @@ $( document ).ready(function() {
         },
         popupDetailDate: function(isAllDay, start, end) {
           var isSameDate = moment(start).isSame(end);
-          var endFormat = (isSameDate ? '' : 'YYYY.MM.DD ') + 'hh:mm a';
+          var endFormat = (isSameDate ? '' : 'MM/DD/YYYY ') + 'hh:mm a';
 
           if (isAllDay) {
-            return moment(start).format('YYYY.MM.DD') + (isSameDate ? '' : ' - ' + moment(end).format('YYYY.MM.DD'));
+            return moment(start).format('MM/DD/YYYY') + (isSameDate ? '' : ' - ' + moment(end).format('MM/DD/YYYY'));
           }
 
-          return (moment(start).format('YYYY.MM.DD hh:mm a') + ' - ' + moment(end).format(endFormat));
+          return (moment(start).format('MM/DD/YYYY hh:mm a') + ' - ' + moment(end).format(endFormat));
         },
         popupDetailLocation: function(schedule) {
           return 'Location : ' + schedule.location;
@@ -112,65 +131,41 @@ $( document ).ready(function() {
         }
     };
 
+    // For Customize Popups example see: https://github.com/nhn/tui.calendar/blob/master/docs/getting-started.md#customize-popups
+
     var cal = new tui.Calendar('#calendar', {
         defaultView: 'month',
         template: templates,
         useCreationPopup: true,
         useDetailPopup: true,
-        theme: MONTHLY_CUSTOM_THEME
+        theme: MONTHLY_CUSTOM_THEME,
+        // timezones: [{
+        //   timezoneOffset: -300,  // what should this be???
+        //   displayLabel: 'GMT-05:00',  // This would be accurate if above was correct?
+        //   tooltip: 'Eastern'
+        // }],
+        month: {
+          isAlways6Week: false
+        }
     });
 
-    // This would be schedules loaded in from db
-    cal.createSchedules([
-        {
-            id: scheduleCounter++,
-            calendarId: '1',
-            title: 'Open 2 - 4 pm',
-            category: 'time',
-            dueDateClass: '',
-            start: '2019-12-08T22:30:00+09:00',
-            end: '2019-12-09T02:30:00+09:00',
-            // isReadOnly: true    // schedule is read-only
-        },
-        {
-            id: scheduleCounter++,
-            calendarId: '1',
-            title: 'second schedule',
-            category: 'time',
-            dueDateClass: '',
-            start: '2019-11-18T17:30:00+09:00',
-            end: '2019-11-19T17:31:00+09:00',
-            // isReadOnly: true    // schedule is read-only
-        },
-        {
-            id: scheduleCounter++,
-            calendarId: '1',
-            title: 'third schedule',
-            category: 'time',
-            dueDateClass: '',
-            start: '2019-11-22T17:30:00+09:00',
-            end: '2019-11-23T17:31:00+09:00',
-            // isReadOnly: true    // schedule is read-only
-        },
-        {
-            id: scheduleCounter++,
-            calendarId: '1',
-            title: 'fourth schedule',
-            category: 'time',
-            dueDateClass: '',
-            start: '2019-11-08T05:30:00+09:00',
-            end: '2019-11-08T06:30:00+09:00',
-            // isReadOnly: true    // schedule is read-only
-        }
-    ]);
+    let schedules = JSON.parse(document.getElementById("existing_schedules").getAttribute('data-schedules'));
+    schedules.forEach(function (schedule) {
+      schedule.calendarId = 1;
+      schedule.category = 'time';
+      // schedule.isReadOnly = true;
+    });
+    console.log(schedules);
+
+    cal.createSchedules(schedules);
 
     cal.on('beforeCreateSchedule', function(event) {
         var schedule = {
-            id: scheduleCounter++,     // How should this be set/iterated?
-            calendarId: '1',
+            // id: scheduleCounter++,     // How should this be set/iterated?
+            // calendarId: '1',
             title: event.title,
-            isAllDay: event.isAllDay,
-            category: 'time',
+            is_all_day: event.isAllDay,
+            // category: 'time',
             start: event.start,
             end: event.end,
         };
@@ -182,18 +177,62 @@ $( document ).ready(function() {
 	        // open writing detail schedule popup
 	        // schedule = {...};
 	    }
+      // console.log('beforeCreateSchedule');
+
+      fetchParams.body = JSON.stringify(schedule);
+      fetch(saveScheduleUrl, fetchParams)
+      .then(data=>{return data.json()})
+      .then(res=>{
+        console.log(res);
+        schedule.id = res.id;
+      })
+      .catch(error=>console.log(error))
+
+      schedule.calendarId = 1;
+      schedule.category = 'time';
 
 	    cal.createSchedules([schedule]);
 	});
 
     cal.on('beforeUpdateSchedule', function(event) {
-        var schedule = event.schedule;
+        var schedule = {
+            id: event.schedule.id,
+            title: event.changes.title || event.schedule.title,
+            start: event.changes.start || event.schedule.start,
+            end: event.changes.end || event.schedule.end,
+            is_all_day: event.changes.isAllDay || event.schedule.isAllDay,
+        };
+
         // Do any desired modifications of the schedule here...
+        fetchParams.body = JSON.stringify(schedule);
+        fetch(saveScheduleUrl, fetchParams)
+        .then(data=>{return data.json()})
+        .then(res=>{
+          console.log(res);
+        })
+        .catch(error=>console.log(error))
+
+        schedule.calendarId = 1;
+        schedule.category = 'time';
+
         cal.updateSchedule(schedule.id, schedule.calendarId, schedule);
     });
 
     cal.on('beforeDeleteSchedule', function(event) {
-        var schedule = event.schedule;
+        var schedule = {
+            id: event.schedule.id,
+        };
+
+        fetchParams.body = JSON.stringify(schedule);
+        fetch(deleteScheduleUrl, fetchParams)
+        .then(data=>{return data.json()})
+        .then(res=>{
+          console.log(res);
+        })
+        .catch(error=>console.log(error))
+
+        schedule.calendarId = event.schedule.calendarId;
+
         cal.deleteSchedule(schedule.id, schedule.calendarId);
     });
 
@@ -220,3 +259,31 @@ $( document ).ready(function() {
 	});
 
 });
+
+
+
+
+// const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
+
+// const Url = '//metalandmoss.box/cp';
+// const Data = {
+//   id: 311,
+//   name: "Veronica"
+// };
+// const otherParams = {
+//   headers: {
+//     "content-type":"application/json; charset=UTF-8",
+//     "Accept": "application/json",
+//     "X-Requested-With": "XMLHttpRequest",
+//     "X-CSRF-Token": csrfToken
+//   },
+//   body: JSON.stringify(Data),
+//   method: "POST",
+//   credentials: "same-origin"
+// };
+
+// fetch(Url, otherParams)
+// .then(data=>{return data.json()})
+// .then(res=>{console.log(res)})
+// .catch(error=>console.log(error))
+  
