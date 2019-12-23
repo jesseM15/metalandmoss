@@ -41,7 +41,7 @@
             </div>
 
             <div class="row">
-                <div class="news col-sm-6">
+                <div id="news" class="news col-sm-6">
                     <h1>Autumn Sale!</h1>
                     <sup>9/12/19</sup>
                     <p>
