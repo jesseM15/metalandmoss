@@ -11,8 +11,11 @@ $( document ).ready(function() {
 
     const csrfToken = document.head.querySelector("[name~=csrf-token][content]").content;
 
-    const saveScheduleUrl = '//metalandmoss.box/save-schedule';
-    const deleteScheduleUrl = '//metalandmoss.box/delete-schedule';
+    var getUrl = window.location;
+    var baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    console.log(baseUrl);
+    const saveScheduleUrl = baseUrl + 'save-schedule';
+    const deleteScheduleUrl = baseUrl + 'delete-schedule';
 
     const fetchParams = {
       headers: {
