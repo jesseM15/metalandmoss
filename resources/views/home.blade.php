@@ -3,7 +3,6 @@
 @section('title', 'Metal & Moss')
 
 @section('content')
-<div id="existing_schedules" data-schedules="{{ $schedules }}"></div>
     	<div class="hero-image">
             @include('layouts.nav')
         	<div class="hero-text">
@@ -19,26 +18,15 @@
             </div>
         </div>
 
-        <div class="container-fluid products">
-            <img class="item" src="img/apple.jpg">
-            <img class="item" src="img/vase.jpg">
-            <img class="item" src="img/eggs.jpg">
-            <img class="item" src="img/chair.jpg">
-            <img class="item" src="img/basket.jpg">
-            <img class="item" src="img/blue-dresser.jpg">
-            <img class="item" src="img/mirror-dresser.jpg">
-            <img class="item" src="img/pedestals.jpg">
-            <img class="item" src="img/pumpkin.jpg">
-        </div>
-
         <div class="container">
-            <div class="row">
-                <div class="col-sm-9">
+            <!-- <div class="row">
+                <div class="col-sm-9 d-none d-sm-block">
                     <div class="side-callout rotate">
                         Artisanal Goods
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <br><br>
 
             <div class="row">
                 <div id="news" class="news col-sm-6">
@@ -56,24 +44,25 @@
                 </div>
 
                 <div class="map col-sm-6">
-                    <div class="container">
+                    <div class="container" data-aos="zoom-in">
                         <div id="menu">
                             <span id="menu-navi">
                             <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
                             <button type="button" class="btn btn-default btn-sm move-day" data-action="move-prev">
-                                <i class="calendar-icon ic-arrow-line-left" data-action="move-prev"></i>
+                                <i class="fas fa-chevron-left" data-action="move-prev"></i>
                             </button>
                             <button type="button" class="btn btn-default btn-sm move-day" data-action="move-next">
-                                <i class="calendar-icon ic-arrow-line-right" data-action="move-next"></i>
+                                <i class="fas fa-chevron-right" data-action="move-next"></i>
                             </button>
                             </span>
                             <span id="renderRange" class="render-range"></span>
                         </div>
 
                         <div id="calendar"></div>
+                        <div id="existing_schedules" data-schedules="{{ $schedules }}"></div>
                     </div>
-                    <br>
-                    <p>We will be open in 2 days (12/17/19 2-4 pm).</p>
+                    <!-- <br>
+                    <p>We will be open in 2 days (12/17/19 2-4 pm).</p> -->
                     <br>
                     <div style="width: 100%"><iframe width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=7385%20Middlebranch%20Rd%2C%20North%20Canton%20Ohio+(Metal%20%26%20Moss)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">gps coordinates</a></iframe></div><br />
                 </div>
@@ -89,56 +78,96 @@
 
         </div>
 
-        <div id="about" class="container-fluid">
-            <div class="container">
-                <h1>About Metal & Moss</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan in nisl nisi scelerisque. Diam maecenas ultricies mi eget mauris pharetra. Justo eget magna fermentum iaculis eu non diam phasellus. Turpis tincidunt id aliquet risus feugiat in. Nullam vehicula ipsum a arcu cursus vitae congue. Mus mauris vitae ultricies leo. Nibh mauris cursus mattis molestie a iaculis. Ut tristique et egestas quis ipsum suspendisse. Risus pretium quam vulputate dignissim suspendisse. Morbi tristique senectus et netus. Lectus magna fringilla urna porttitor rhoncus. Vel elit scelerisque mauris pellentesque pulvinar pellentesque.
-                </p>
-            </div>
-        
+        <div class="container-fluid products">
+            <img class="item" src="img/apple.jpg" data-aos="flip-left" data-aos-delay="200">
+            <img class="item" src="img/vase.jpg" data-aos="flip-right" data-aos-delay="200">
+            <img class="item" src="img/eggs.jpg" data-aos="flip-left" data-aos-delay="200">
+            <img class="item" src="img/chair.jpg" data-aos="flip-right" data-aos-delay="200">
+            <img class="item" src="img/basket.jpg" data-aos="flip-left" data-aos-delay="200">
+            <img class="item" src="img/blue-dresser.jpg" data-aos="flip-right" data-aos-delay="200">
+            <img class="item" src="img/mirror-dresser.jpg" data-aos="flip-left" data-aos-delay="200">
+            <img class="item" src="img/pedestals.jpg" data-aos="flip-right" data-aos-delay="200">
+            <img class="item" src="img/pumpkin.jpg" data-aos="flip-left" data-aos-delay="200">
         </div>
         
-        <div class="container-wave">
+        <!-- <div class="container-wave">
 
             <svg width="800" height="124" viewBox="0 0 800 124" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#74b3ce"/>
             </svg>
 
+        </div> -->
+        <div id="about_section">
+            <div class="container-wave">
+                <svg width="800" height="124" viewBox="0 0 800 124" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#74b3ce"/>
+                </svg>
+            </div>
+            <div id="about" class="container-fluid">
+                <div class="container">
+                    <h1>About Metal & Moss</h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan in nisl nisi scelerisque. Diam maecenas ultricies mi eget mauris pharetra. Justo eget magna fermentum iaculis eu non diam phasellus. Turpis tincidunt id aliquet risus feugiat in. Nullam vehicula ipsum a arcu cursus vitae congue. Mus mauris vitae ultricies leo. Nibh mauris cursus mattis molestie a iaculis. Ut tristique et egestas quis ipsum suspendisse. Risus pretium quam vulputate dignissim suspendisse. Morbi tristique senectus et netus. Lectus magna fringilla urna porttitor rhoncus. Vel elit scelerisque mauris pellentesque pulvinar pellentesque.
+                            </p>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan in nisl nisi scelerisque. Diam maecenas ultricies mi eget mauris pharetra. Justo eget magna fermentum iaculis eu non diam phasellus. Turpis tincidunt id aliquet risus feugiat in. Nullam vehicula ipsum a arcu cursus vitae congue. Mus mauris vitae ultricies leo. Nibh mauris cursus mattis molestie a iaculis. Ut tristique et egestas quis ipsum suspendisse. Risus pretium quam vulputate dignissim suspendisse. Morbi tristique senectus et netus. Lectus magna fringilla urna porttitor rhoncus. Vel elit scelerisque mauris pellentesque pulvinar pellentesque.
+                            </p>
+                        </div>
+                        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <img class="building img-fluid" src="img/building.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="contact" class="container-fluid">
             <div class="container">
-                <div class="col-sm-6">
-                    <h1>Contact Us</h1>
-                    <form class="form" action="/" method="POST">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input id="email" type="email" name="email" class="form-control" placeholder="Email address">
+                <div class="row">
+                    <div class="col-sm-8 text-center">
+                        <br><br><br><br><br>
+                        <div data-aos="fade-up" data-aos-delay="200">
+                            Find something you'll cherish at:<br><br>
+                            Metal & Moss<br>
+                            7385 Middlebranch Rd<br>
+                            North Canton, Ohio
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <h1>Contact Us</h1>
+                        <form class="form" action="/" method="POST">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" name="email" class="form-control" placeholder="Email address">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <input id="subject" type="text" name="subject" class="form-control" placeholder="Subject">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="subject">Subject</label>
+                                        <input id="subject" type="text" name="subject" class="form-control" placeholder="Subject">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" type="text" name="message" class="form-control">A message for us</textarea>
+                            
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" type="text" name="message" class="form-control">A message for us</textarea>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-dark mb-2">Submit</button>
-                        </div>
-                    </form>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-dark mb-2">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -15,6 +15,7 @@ body {
     /*font-family: 'Prata', serif;*/
     font-family: 'Spinnaker', sans-serif;
     /*font-family: 'Fredericka the Great', cursive;*/
+    outline: #f00;
 }
 
 /* Begin Bootstrap modifications */
@@ -106,7 +107,7 @@ body {
 
 
 .hero-image {
-    background-image: linear-gradient(#0007, #0007), url("/img/toa-heftiba.jpg");
+    background-image: linear-gradient(#0007, #0007), url("/img/cabin.jpg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -161,12 +162,12 @@ body {
 
 
 
-.intro-text,
+/* .intro-text,
 .news,
 .map {
     position: relative;
     top: -5.6rem;
-}
+} */
 
 h1 {
   font-size: 1.75rem;
@@ -179,6 +180,7 @@ h1 {
     top: 25rem;
     right: -47rem;
     width: 100%;
+    display: block;
 }
 
 .rotate {
@@ -215,8 +217,13 @@ h1 {
 /* Begin Products Section */
 
 .products {
-  overflow: auto;
+  /* overflow: auto; */
+  overflow-x: hidden;
   white-space: nowrap;
+  background: #74b3ce;
+  background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%);
+  padding: 3rem;
+  margin: 0 !important;
 }
 
 .products .item {
@@ -224,28 +231,48 @@ h1 {
   display: inline-block;
   text-align: center;
   padding: 0 0.25rem;
+  
 }
 
 /* End Products Section */
 
+#about_section {
+  background-image: linear-gradient(#0007, #0007), url("/img/toa-heftiba.jpg");
+  /* height: 50%; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: #fff;
+}
+
 #about {
   /* background: #63a46c; */
   /* background: linear-gradient(0deg, #63a46cff 0%, #63a46cff 15%, #63d471ff 100%); */
-  background: #74b3ce;
-  background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%);
-  color: #FCEFF9;
-  padding: 3rem;
+  /* background: #74b3ce; */
+  /* background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%); */
+  /* color: #FCEFF9; */
+  padding-bottom: 3rem;
+
+  
+}
+
+.building {
+  border-radius: 50%;
+  max-width: 300px;
+  max-height: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 }
 
 .container-wave svg {
   /* background: #74b3ce; */
-  background: #63d471;
+  /* background: #63d471; */
   width: 100%;
 }
 
 .container-wave.inverse svg {
   transform: rotate(180deg);
-  background: #fff;
+  /* background: #fff; */
 }
 
 #contact {
