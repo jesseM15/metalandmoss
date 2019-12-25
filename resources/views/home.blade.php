@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="map col-sm-6">
-                    <div class="container" data-aos="zoom-in">
+                    <div class="container">
                         <div id="menu">
                             <span id="menu-navi">
                             <button type="button" class="btn btn-default btn-sm move-today" data-action="move-today">Today</button>
@@ -73,12 +73,12 @@
         <div class="container-wave inverse">
 
             <svg width="800" height="124" viewBox="0 0 800 124" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#30c5ff"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#8b728e"/>
             </svg>
 
         </div>
 
-        <div class="container-fluid products">
+        <div class="container-fluid products dragscroll">
             <img class="item" src="img/apple.jpg" data-aos="flip-left" data-aos-delay="200">
             <img class="item" src="img/vase.jpg" data-aos="flip-right" data-aos-delay="200">
             <img class="item" src="img/eggs.jpg" data-aos="flip-left" data-aos-delay="200">
@@ -100,7 +100,7 @@
         <div id="about_section">
             <div class="container-wave">
                 <svg width="800" height="124" viewBox="0 0 800 124" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#74b3ce"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V64C0 64 170.803 8.71649 282 18C339.987 22.8412 381.54 47.4943 422.518 71.8066C466.714 98.0278 510.242 123.853 573 124C664.693 124.215 800 64 800 64V0H0Z" fill="#a08ba2"/>
                 </svg>
             </div>
             <div id="about" class="container-fluid">
@@ -115,7 +115,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Accumsan in nisl nisi scelerisque. Diam maecenas ultricies mi eget mauris pharetra. Justo eget magna fermentum iaculis eu non diam phasellus. Turpis tincidunt id aliquet risus feugiat in. Nullam vehicula ipsum a arcu cursus vitae congue. Mus mauris vitae ultricies leo. Nibh mauris cursus mattis molestie a iaculis. Ut tristique et egestas quis ipsum suspendisse. Risus pretium quam vulputate dignissim suspendisse. Morbi tristique senectus et netus. Lectus magna fringilla urna porttitor rhoncus. Vel elit scelerisque mauris pellentesque pulvinar pellentesque.
                             </p>
                         </div>
-                        <div class="col-sm-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-sm-6 text-center building-container" data-aos="fade-left" data-aos-delay="200">
                             <img class="building img-fluid" src="img/building.jpg">
                         </div>
                     </div>
@@ -126,14 +126,28 @@
         <div id="contact" class="container-fluid">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 text-center">
-                        <br><br><br><br><br>
-                        <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-sm-8 text-center address-container">
+                        <!-- <div class="address" data-aos="fade-up" data-aos-delay="200"> -->
+                        <div class="address">
                             Find something you'll cherish at:<br><br>
                             Metal & Moss<br>
                             7385 Middlebranch Rd<br>
                             North Canton, Ohio
                         </div>
+                        <!-- <div class="icons">
+                            <div class="icon cut">
+                                <i class="fas fa-cut"></i>
+                            </div>
+                            <div class="icon brush">
+                                <i class="fas fa-brush"></i>
+                            </div>
+                            <div class="icon hammer">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <div class="icon pen">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                        </div> -->
                     </div>
                     <div class="col-sm-4">
                         <h1>Contact Us</h1>

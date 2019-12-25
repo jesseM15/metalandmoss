@@ -3,6 +3,7 @@
 https://coolors.co/454851-73956f-7bae7f-95d7ae-fceff9
 https://coolors.co/454851-4ecdc4-f7fff7-ff6b6b-fceff9
 https://coolors.co/454851-69fff1-63d471-63a46c-fceff9
+https://coolors.co/454851-a08ba2-63d471-63a46c-fceff9
 
 */
 
@@ -16,6 +17,7 @@ body {
     font-family: 'Spinnaker', sans-serif;
     /*font-family: 'Fredericka the Great', cursive;*/
     outline: #f00;
+    color: #333;
 }
 
 /* Begin Bootstrap modifications */
@@ -107,7 +109,7 @@ body {
 
 
 .hero-image {
-    background-image: linear-gradient(#0007, #0007), url("/img/cabin.jpg");
+    background-image: linear-gradient(#0007, #0007), url("/img/bed-flower.jpg");
     height: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -217,13 +219,13 @@ h1 {
 /* Begin Products Section */
 
 .products {
-  /* overflow: auto; */
   overflow-x: hidden;
   white-space: nowrap;
-  background: #74b3ce;
-  background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%);
-  padding: 3rem;
-  margin: 0 !important;
+  /* background: #74b3ce; */
+  background: #a08ba2;
+  /* background: linear-gradient(0deg, #74b3ceff 0%, #74b3ceff 15%, #30c5ffff 100%); */
+  background: linear-gradient(0deg, #a08ba2ff 0%, #a08ba2ff 15%, #8b728eff 100%);
+  padding: 3rem 0;
 }
 
 .products .item {
@@ -231,13 +233,20 @@ h1 {
   display: inline-block;
   text-align: center;
   padding: 0 0.25rem;
-  
+}
+
+.products .item:first-child {
+  padding-left: 3rem;
+}
+
+.products .item:last-child {
+  padding-right: 3rem;
 }
 
 /* End Products Section */
 
 #about_section {
-  background-image: linear-gradient(#0007, #0007), url("/img/toa-heftiba.jpg");
+  background-image: linear-gradient(#0007, #0007), url("/img/ivy-bench.jpg");
   /* height: 50%; */
   background-position: center;
   background-repeat: no-repeat;
@@ -257,11 +266,19 @@ h1 {
   
 }
 
+.building-container {
+  position: relative;
+}
+
 .building {
   border-radius: 50%;
   max-width: 300px;
   max-height: 300px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container-wave svg {
@@ -284,7 +301,68 @@ h1 {
   padding: 3rem;
 }
 
+.address-container {
+  position: relative;
+}
 
+.address {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FCEFF9;
+  width: 20rem;
+  font-size: 1.2rem;
+  padding: 2rem 3rem;
+  /* border: 1px solid #FCEFF9; */
+  /* border-radius: 15px; */
+}
+
+/* .icons {
+  position: relative;
+}
+
+.icon {
+  font-size: 5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.icon.cut {
+  top: -10rem;
+  left: -12vw;
+}
+
+.icon.cut i {
+  transform: rotate(62deg);
+}
+
+.icon.brush {
+  top: 3rem;
+  left: 12rem;
+}
+
+.icon.brush i {
+  transform: rotate(10deg);
+}
+
+.icon.hammer {
+  bottom: -12rem;
+  left: -30vw;
+}
+
+.icon.hammer i {
+  transform: rotate(320deg);
+}
+
+.icon.pen {
+  right: -5vw;
+}
+
+.icon.hammer i {
+  transform: rotate(320deg);
+} */
 
 
 footer {
