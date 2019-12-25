@@ -34,7 +34,6 @@ class PagesController extends Controller
 		\Cart::session(1)->clear();
 		\Cart::add(1, 'Sample Item', 49.95, 2, []);
 		$data['summedPrice'] = \Cart::get(1)->getPriceSum();
-		$data['nav_pages'] = $this->getNav();
 		return view('cart', $data);
 	}
 
@@ -46,7 +45,6 @@ class PagesController extends Controller
 			$schedules[$n]->isAllDay = $schedules[$n]->isAllDay ? true : false;
 		}
 		$data['schedules'] = json_encode($schedules);
-		$data['nav_pages'] = $this->getNav();
 		return view('calendar', $data);
 	}
 
@@ -106,5 +104,11 @@ class PagesController extends Controller
 		$time = strtotime($date); // time is now equals to the timestamp
 		$converted = date('Y-m-d H:i:s', $time);
 		return $converted;
+	}
+
+	public function contact()
+	{
+		mail('jmerrittdev@gmail.com', 'Metal and Moss Contact', print_r($_POST, true));
+		return 'Contact message sent.';
 	}
 }
